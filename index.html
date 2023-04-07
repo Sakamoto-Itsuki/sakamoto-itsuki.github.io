@@ -37,6 +37,35 @@
       src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://sakamoto-itsuki.github.io/fy2023-6.jpg"
     ></iframe>
     <p>js</p>
+    <pre>
+      <code>
+        &lt;head&gt;
+          &lt;link
+            rel=&quot;stylesheet&quot;
+            href=&quot;https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css&quot;
+          /&gt;
+          &lt;script
+            type=&quot;text/javascript&quot;
+            src=&quot;https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js&quot;
+          &gt;&lt;/script&gt;
+          &lt;style&gt;
+            #panorama {
+              width: 600px;
+              height: 400px;
+            }
+          &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;div id=&quot;panorama&quot;&gt;&lt;/div&gt;
+          &lt;script&gt;
+            pannellum.viewer(&quot;panorama&quot;, {
+              type: &quot;equirectangular&quot;,
+              panorama: &quot;https://sakamoto-itsuki.github.io/fy2023-6.jpg&quot;,
+            });
+          &lt;/script&gt;
+        &lt;/body&gt;
+      </code>
+    </pre>
     <div id="panorama"></div>
     <script>
       pannellum.viewer("panorama", {
