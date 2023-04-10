@@ -81,29 +81,29 @@
         &lt;/body&gt;
       </code>
     </pre>
-    <div id="panorama"></div>
+    <!-- <div id="panorama"></div>
     <div></div>
     <script>
       pannellum.viewer("panorama", {
         type: "equirectangular",
         panorama: "image/fy2023-6.jpg",
       });
-    </script>
+    </script> -->
     <h3>補足</h3>
     <p>自動ロード設定や自動回転などの設定も可能</p>
     <p>
       下図は自動ロード、自動回転、タイトル・著者、コンパス非表示の設定を追加
     </p>
-    <div id="panorama2"></div>
+    <div id="panorama"></div>
     <script>
-      pannellum.viewer("panorama2", {
+      pannellum.viewer("panorama", {
         type: "equirectangular",
         panorama: "image/fy2023-6.jpg",
         autoLoad: true,
-        // autoRotate: -2,
-        // title: "title",
-        // author: "author",
-        // compass: false,
+        autoRotate: -2,
+        title: "title",
+        author: "author",
+        compass: false,
       });
     </script>
   </body>
