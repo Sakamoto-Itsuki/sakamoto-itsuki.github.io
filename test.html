@@ -31,7 +31,7 @@
     <p>・画像URLまたはファイルパスを取得</p>
     <p>・html、js、cssを編集及び360度画像の埋め込み</p>
     <h3>html</h3>
-    <p>画像は#panorama=以降にURLで指定</p>
+    <p>画像は、#panorama=以降にURLで指定します。</p>
     <pre>
       <code>
         &lt;body&gt;
@@ -54,7 +54,8 @@
     ></iframe>
     <div></div>
     <h3>API(javascript)</h3>
-    <p>画像はURLまたはファイルパスで指定</p>
+    <p>画像は、URLまたはファイルパスで指定します。</p>
+    <p>ライブラリの読み込みやcssの設定が必要になります。</p>
     <pre>
       <code>
         &lt;head&gt;
@@ -92,8 +93,10 @@
       });
     </script>
     <h3>補足</h3>
-    <p>自動ロード設定や自動回転などの設定も可能</p>
-    <p>下図は自動ロード、自動回転、タイトル、コンパス非表示の設定を追加。</p>
+    <p>html、jsともに自動ロード設定や自動回転などの設定も可能です。</p>
+    <p>
+      下図は自動ロード、自動回転、タイトル表示、コンパス非表示の設定を追加しています。
+    </p>
     <div id="panorama2"></div>
     <script>
       pannellum.viewer("panorama2", {
@@ -101,7 +104,7 @@
         panorama: "image/fy2023-6.jpg",
         autoLoad: true,
         autoRotate: -2,
-        title: "title",
+        title: "タイトル",
         compass: false,
       });
     </script>
@@ -114,11 +117,18 @@
             panorama: &quot;image/fy2023-6.jpg&quot;,
             autoLoad: true,
             autoRotate: -2,
-            title: &quot;title&quot;,
+            title: &quot;タイトル&quot;,
             compass: false,
           });
         &lt;/script&gt;
         </code>
     </pre>
+    <iframe
+      width="600"
+      height="400"
+      allowfullscreen
+      style="border-style: none"
+      src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://pannellum.org/images/cerro-toco-0.jpg&amp;autoLoad=true&amp;autoRotate=-2&amp;title=%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB&amp;compass=false"
+    ></iframe>
   </body>
 </html>
