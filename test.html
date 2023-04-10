@@ -28,8 +28,8 @@
     <h2>Pannellumを使用した360度画像の埋め込み</h2>
     <h3>手順</h3>
     <p>・サーバに画像をアップロード</p>
-    <p>・URL取得</p>
-    <p>・html、jsを変更</p>
+    <p>・画像URLまたはファイルパスを取得</p>
+    <p>・html、js、cssを編集及び360度画像の埋め込み</p>
     <h3>html</h3>
     <pre>
       <code>
@@ -86,12 +86,14 @@
     <script>
       pannellum.viewer("panorama", {
         type: "equirectangular",
-        panorama: "image/fy2023-6.jpg",
+        panorama: "https://sakamoto-itsuki.github.io/image/fy2023-6.jpg",
       });
     </script>
     <h3>補足</h3>
     <p>自動ロード設定や自動回転などの設定も可能</p>
-    <p>下図は自動ロード、自動回転、タイトル、コンパス非表示の設定を追加</p>
+    <p>
+      下図は自動ロード、自動回転、タイトル、コンパス非表示の設定を追加。画像をファイルパスで指定。
+    </p>
     <div id="panorama2"></div>
     <script>
       pannellum.viewer("panorama2", {
@@ -103,5 +105,20 @@
         compass: false,
       });
     </script>
+    <pre>
+      <code>
+        &lt;div id=&quot;panorama2&quot;&gt;&lt;/div&gt;
+        &lt;script&gt;
+          pannellum.viewer(&quot;panorama2&quot;, {
+            type: &quot;equirectangular&quot;,
+            panorama: &quot;image/fy2023-6.jpg&quot;,
+            autoLoad: true,
+            autoRotate: -2,
+            title: &quot;title&quot;,
+            compass: false,
+          });
+        &lt;/script&gt;
+        </code>
+    </pre>
   </body>
 </html>
