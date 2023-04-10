@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+      #panorama {
+        width: 600px;
+        height: 400px;
+      }
+      #panorama2 {
+        width: 600px;
+        height: 400px;
+      }
+      pre {
+        background-color: linen;
+      }
+      h3 {
+        background-color: lightgrey;
+        padding-left: 0.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Pannellumを使用した360度画像の埋め込み</h2>
+    <h3>手順</h3>
+    <p>・サーバに画像をアップロード</p>
+    <p>・画像URLまたはファイルパスを取得</p>
+    <p>・html、js、cssを編集及び360度画像の埋め込み</p>
+    <h3>html</h3>
+    <p>画像は、#panorama=以降にURLで指定します。</p>
+    <pre>
+      <code>
+        &lt;body&gt;
+          &lt;iframe
+            width=&quot;600&quot;
+            height=&quot;400&quot;
+            allowfullscreen
+            style=&quot;border-style: none&quot;
+            src=&quot;https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://sakamoto-itsuki.github.io/image/fy2023-6.jpg&quot;
+          &gt;&lt;/iframe&gt;
+        &lt;/body&gt;
+        </code>
+    </pre>
+    <iframe
+      width="600"
+      height="400"
+      allowfullscreen
+      style="border-style: none"
+      src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://sakamoto-itsuki.github.io/image/fy2023-6.jpg"
+    ></iframe>
+    <div></div>
+    <h3>API(javascript)</h3>
+    <p>画像は、URLまたはファイルパスで指定します。</p>
+    <p>ライブラリの読み込みやcssの設定が必要になります。</p>
+    <pre>
+      <code>
+        &lt;head&gt;
+          &lt;link
+            rel=&quot;stylesheet&quot;
+            href=&quot;https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css&quot;
+          /&gt;
+          &lt;script
+            type=&quot;text/javascript&quot;
+            src=&quot;https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js&quot;
+          &gt;&lt;/script&gt;
+          &lt;style&gt;
+            #panorama {
+              width: 600px;
+              height: 400px;
+            }
+          &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;div id=&quot;panorama&quot;&gt;&lt;/div&gt;
+          &lt;script&gt;
+            pannellum.viewer(&quot;panorama&quot;, {
+              type: &quot;equirectangular&quot;,
+              panorama: &quot;image/fy2023-6.jpg&quot;,
+            });
+          &lt;/script&gt;
+        &lt;/body&gt;
+      </code>
+    </pre>
+    <div id="panorama"></div>
+    <script>
+      pannellum.viewer("panorama", {
+        type: "equirectangular",
+        panorama: "image/fy2023-6.jpg",
+      });
+    </script>
+    <h3>補足</h3>
+    <p>html、jsともに自動ロード設定や自動回転などの設定も可能です。</p>
+    <p>
+      下図は自動ロード、自動回転、タイトル表示、コンパス非表示の設定を追加しています。
+    </p>
+    <div id="panorama2"></div>
+    <script>
+      pannellum.viewer("panorama2", {
+        type: "equirectangular",
+        panorama: "image/fy2023-6.jpg",
+        autoLoad: true,
+        autoRotate: -2,
+        title: "タイトル",
+        compass: false,
+      });
+    </script>
+    <pre>
+      <code>
+        &lt;div id=&quot;panorama2&quot;&gt;&lt;/div&gt;
+        &lt;script&gt;
+          pannellum.viewer(&quot;panorama2&quot;, {
+            type: &quot;equirectangular&quot;,
+            panorama: &quot;image/fy2023-6.jpg&quot;,
+            autoLoad: true,
+            autoRotate: -2,
+            title: &quot;タイトル&quot;,
+            compass: false,
+          });
+        &lt;/script&gt;
+        </code>
+    </pre>
+  </body>
+</html>
