@@ -5,10 +5,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
     />
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <style>
       #panorama {
         width: 600px;
@@ -48,7 +45,7 @@
       height="400"
       allowfullscreen
       style="border-style: none"
-      src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=image/fy2023-6.jpg"
+      src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://sakamoto-itsuki.github.io/image/fy2023-6.jpg"
     ></iframe>
     <div></div>
     <h3>API(javascript)</h3>
@@ -81,9 +78,9 @@
         &lt;/body&gt;
       </code>
     </pre>
-    <div id="test"></div>
+    <div id="panorama"></div>
     <script>
-      pannellum.viewer("test", {
+      pannellum.viewer("panorama", {
         type: "equirectangular",
         panorama: "image/fy2023-6.jpg",
       });
@@ -91,7 +88,7 @@
     <h3>補足</h3>
     <p>自動ロード設定や自動回転などの設定も可能</p>
     <p>下図は自動ロード、自動回転、タイトル、コンパス非表示の設定を追加</p>
-    <!-- <div id="panorama"></div>
+    <div id="panorama"></div>
     <script>
       pannellum.viewer("panorama", {
         type: "equirectangular",
@@ -101,6 +98,6 @@
         title: "title",
         compass: false,
       });
-    </script> -->
+    </script>
   </body>
 </html>
