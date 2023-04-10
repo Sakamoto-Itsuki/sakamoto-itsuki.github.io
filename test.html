@@ -31,6 +31,7 @@
     <p>・画像URLまたはファイルパスを取得</p>
     <p>・html、js、cssを編集及び360度画像の埋め込み</p>
     <h3>html</h3>
+    <p>画像は#panorama=以降にURLで指定</p>
     <pre>
       <code>
         &lt;body&gt;
@@ -53,6 +54,7 @@
     ></iframe>
     <div></div>
     <h3>API(javascript)</h3>
+    <p>画像はURLまたはファイルパスで指定</p>
     <pre>
       <code>
         &lt;head&gt;
@@ -76,7 +78,7 @@
           &lt;script&gt;
             pannellum.viewer(&quot;panorama&quot;, {
               type: &quot;equirectangular&quot;,
-              panorama: &quot;https://sakamoto-itsuki.github.io/image/fy2023-6.jpg&quot;,
+              panorama: &quot;image/fy2023-6.jpg&quot;,
             });
           &lt;/script&gt;
         &lt;/body&gt;
@@ -86,14 +88,12 @@
     <script>
       pannellum.viewer("panorama", {
         type: "equirectangular",
-        panorama: "https://sakamoto-itsuki.github.io/image/fy2023-6.jpg",
+        panorama: "image/fy2023-6.jpg",
       });
     </script>
     <h3>補足</h3>
     <p>自動ロード設定や自動回転などの設定も可能</p>
-    <p>
-      下図は自動ロード、自動回転、タイトル、コンパス非表示の設定を追加。画像をファイルパスで指定。
-    </p>
+    <p>下図は自動ロード、自動回転、タイトル、コンパス非表示の設定を追加。</p>
     <div id="panorama2"></div>
     <script>
       pannellum.viewer("panorama2", {
