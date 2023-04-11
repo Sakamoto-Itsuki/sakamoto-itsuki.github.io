@@ -56,6 +56,18 @@
       src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://sakamoto-itsuki.github.io/image/IMG_20230308_203330_597.jpg&amp;autoLoad=true&amp;pitch=-20&amp;yaw=-160&amp;hfov=120"
     ></iframe>
     <p></p>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <a-scene>
+      <a-assets>
+        <video
+          id="video"
+          src="video/temp_video_1678309953179.mp4"
+          autoplay
+          loop
+        ></video>
+      </a-assets>
+      <a-videosphere src="#video"></a-videosphere>
+    </a-scene>
     <p></p>
   </body>
 </html>
