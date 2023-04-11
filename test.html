@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head> </head>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
   <body>
     <h2>Pannellumを使用した360度画像の埋め込み</h2>
     <iframe
@@ -56,17 +58,23 @@
       src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://sakamoto-itsuki.github.io/image/IMG_20230308_203330_597.jpg&amp;autoLoad=true&amp;pitch=-20&amp;yaw=-160&amp;hfov=120"
     ></iframe>
     <p></p>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <a-scene>
       <a-assets>
         <video
-          id="video"
-          src="video/temp_video_1678309953179.mp4"
+          id="penguin-sledding"
           autoplay
-          loop
+          loop="true"
+          src="video/temp_video_1678309953179.mp4"
         ></video>
       </a-assets>
-      <a-videosphere src="#video"></a-videosphere>
+
+      <!-- Using the asset management system. -->
+      <a-video
+        src="#penguin-sledding"
+        width="16"
+        height="9"
+        position="0 0 -20"
+      ></a-video>
     </a-scene>
     <p></p>
   </body>
